@@ -1,0 +1,7 @@
+#this configuration  is to disable it register it self
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0

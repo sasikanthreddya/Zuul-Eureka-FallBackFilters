@@ -1,0 +1,6 @@
+applications:
+- name: paytm-bus-service
+path: target/Paytm-BusSerivcie-0.0.1-SNAPSHOT.jar
+domain: cfapps.io
+memory: 650M
+instances: 1

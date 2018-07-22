@@ -1,0 +1,36 @@
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /Api
+  routes:
+    paytm-client:
+      path: /client/**
+      serviceId: PAYTM-CLIENT
+    consumer2:
+      path: /query/**
+      serviceId: PAYTM-INTERNAL
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+server:
+  port: 9000
+
+spring:
+  application:
+    name: zuul-gatWay
+    
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000 
+          
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
